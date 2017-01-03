@@ -2,5 +2,6 @@
   <div>
     Welcome, <%= @user.name %>!<br>
     Joined: <%= @user.created_at.getlocal %><br>
+    Current City: <%= @user.city %><br>
     <%= link_to 'Edit Profile', edit_path %>
   </div>
