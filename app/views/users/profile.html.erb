@@ -1,7 +1,19 @@
 <h1>Current User</h1>
   <div>
+    <%= image_tag('user_profile_img.png') %>
+  </div>
+  <div>
     Welcome, <%= @user.name %>!<br>
     Current City: <%= @user.city %><br>
     Joined: <%= @user.created_at.getlocal %><br>
     <%= link_to 'Edit Profile', edit_path %>
+    <% if !@user.posts.empty?%>
+      <h4> Posts: </h4>
+      <% @user.posts.each do |ele|  %>
+        <h5><%=ele.title%></h5>
+        <p><%=ele.content%></p>
+      <% end %>
+    <%else%>
+      <h4>No Posts Yet</h4>
+    <%end%>
   </div>
