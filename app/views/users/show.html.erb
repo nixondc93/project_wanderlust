@@ -1,6 +1,6 @@
-<h1>Current User</h1>
+<h1>Other User</h1>
   <div>
-    Welcome, <%= @user.name %>!<br>
-    <%= @user.city %><br>
-    Joined <%= @user.created_at %>
+    <%= @user.name %><br>
+    Current City: <%= @user.city %><br>
+    Joined: <%= @user.created_at.getlocal %>
   </div>

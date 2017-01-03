@@ -11,7 +11,6 @@
   <body>
   <% if current_user %>
     Signed in as <%= link_to current_user.name, '/profile' %> | <%= link_to "Logout", '/logout' %>
-
   <% else %>
     <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
   <% end %>
