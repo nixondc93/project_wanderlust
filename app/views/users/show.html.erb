@@ -6,4 +6,13 @@
     <%= @user.name %><br>
     Current City: <%= @user.city %><br>
     Joined: <%= @user.created_at.getlocal %>
+    <% if !@user.posts.empty?%>
+      <h4> Posts: </h4>
+      <% @user.posts.each do |ele|  %>
+        <h5><%=ele.title%></h5>
+        <p><%=ele.content%></p>
+      <% end %>
+    <%else%>
+      <h4>No Posts Yet</h4>
+    <%end%>
   </div>
