@@ -1,6 +1,7 @@
 <h1>Current User</h1>
   <div>
     Welcome, <%= @user.name %>!<br>
+    Current City: <%= @user.city %><br>
     Joined: <%= @user.created_at.getlocal %><br>
     <%= link_to 'Edit Profile', edit_path %>
   </div>
