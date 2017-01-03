@@ -1,5 +1,8 @@
 <h1>Other User</h1>
   <div>
+    <%= image_tag('user_profile_img.png') %>
+  </div>
+  <div>
     <%= @user.name %><br>
     Current City: <%= @user.city %><br>
     Joined: <%= @user.created_at.getlocal %>
