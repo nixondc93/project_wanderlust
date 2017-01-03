@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-  get '/profile' => 'users#show'
+  get '/users/:id' => 'users#show'
+  get '/profile' => 'users#profile'
   get '/edit' => 'users#edit'
   put '/profile' => 'users#update'
   patch '/profile' => 'users#update'
