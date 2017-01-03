@@ -1,6 +1,6 @@
 <h1>Edit User</h1>
   <%= form_for :user, url: '/profile', :method => :put do |f| %>
     Name: <%= f.text_field :name %><br>
-    City: <%= f.text_field :city %><br>
+    Current City: <%= f.text_field :city %><br>
     <%= f.submit %>
   <% end %>
