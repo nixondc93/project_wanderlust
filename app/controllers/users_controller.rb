@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/profile/'+@user.id
+      redirect_to '/profile'
     else
       redirect_to '/signup'
     end
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   def show
       @user = User.find(user_id)
       redirect_to '/profile' if user_id == session[:user_id].to_s
-
   end
 
   def edit
@@ -32,10 +31,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def user_id
-    params[:id]
-  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

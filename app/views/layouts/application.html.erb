@@ -9,9 +9,8 @@
   </head>
 
   <body>
-
   <% if current_user %>
-    Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %> | <%= link_to "Profile", profile_path %>
+    Signed in as <%= link_to current_user.name, '/profile' %> | <%= link_to "Logout", '/logout' %>
   <% else %>
     <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
   <% end %>
