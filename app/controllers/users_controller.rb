@@ -24,10 +24,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(user_id)
+    @user = User.find(session[:user_id])
   end
 
   def update
+    updated_user = User.find(session[:user_id])
+    if updated_user.update(user_params)
+      redirect_to '/profile'
+    else
+      redirect_to '/edit'
+    end
   end
 
   private
