@@ -10,11 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require_tree ../../../vendor/assets
  *= require_tree .
  *= require_self
  */
 
-img {
+.profile-picture {
 height: 200px;
 width: 200px;
+}
+
+.aside-container {
+  z-index: 1;
+  float: left;
 }
