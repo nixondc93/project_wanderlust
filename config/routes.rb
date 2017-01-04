@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show'
+  get '/posts/:id' => 'posts#show', as: 'post'
   get '/profile' => 'users#profile'
   get '/edit' => 'users#edit'
   put '/profile' => 'users#update'

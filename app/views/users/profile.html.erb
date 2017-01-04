@@ -10,7 +10,7 @@
     <% if !@user.posts.empty?%>
       <h4> Posts: </h4>
       <% @user.posts.each do |ele|  %>
-        <h5><%=ele.title%></h5>
+        <h5><%= link_to ele.title,  post_path(ele.id)%></h5>
         <p><%=ele.content%></p>
       <% end %>
     <%else%>
