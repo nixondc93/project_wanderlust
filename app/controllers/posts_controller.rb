@@ -38,9 +38,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.destroy(session[:user_id])
-    session[:user_id] = nil
-    redirect_to '/'
+    Post.destroy(params[:id])
+    params[:id] = nil
+    redirect_to '/profile'
   end
 
   private
