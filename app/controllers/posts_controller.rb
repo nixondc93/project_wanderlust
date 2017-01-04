@@ -43,9 +43,8 @@ class PostsController < ApplicationController
 
   def destroy
     Post.destroy(params[:id])
-    params[:id] = nil
     if $current_city
-      redirect_to '/cities/' + @current_city
+      redirect_to '/cities/' + $current_city
     else
       redirect_to '/profile'
     end
