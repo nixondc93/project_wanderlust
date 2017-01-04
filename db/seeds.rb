@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+    Post.destroy_all
+
     Post.create(title: 'Sunshine', content: 'Its always sunny here!', user_id: '1', city: 'Philadelphia')
     Post.create(title: 'Rain', content: 'Its always rainy here!', user_id: '2', city: 'Seatle')
     Post.create(title: 'Gloomy', content: 'Its always gloomy here!', user_id: '3', city: 'West Orange')
