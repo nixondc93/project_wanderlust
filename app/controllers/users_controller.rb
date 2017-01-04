@@ -16,9 +16,8 @@ class UsersController < ApplicationController
 
   def show
     $current_city = nil
-    @user = User.find(user_id)
-    redirect_to '/profile' if user_id == session[:user_id].to_s
-
+    @user = User.find_by({name: params[:name]})
+    redirect_to '/profile' if @user == User.find(session[:user_id])
   end
 
   def profile
@@ -46,10 +45,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def user_id
-    params[:id]
-  end
 
   def user_params
     params.require(:user).permit(:name, :city, :email, :password, :password_confirmation)

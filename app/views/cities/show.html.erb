@@ -1,7 +1,7 @@
 <h1><%= params[:name] %></h1>
 <%= image_tag(params[:name]+'.jpg', :class => 'iconic-picture') %>
-<%= link_to 'New Post', newpost_path %>
+<%= link_to 'New Post', new_post_path %>
 <% @city.each do |city| %>
-  <p><%= link_to city.title,  post_path(city.id)%></p>
+  <p><%= link_to city.title,  post_path(city.title)%></p>
   <p><%= city.content %></p>
 <% end %>
