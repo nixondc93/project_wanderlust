@@ -1,11 +1,13 @@
 <h1>Other User</h1>
-  <div>
-    <%= image_tag('user_profile_img.png') %>
+  <div class="aside-container col-md-2 col-md-offset-1">
+    <aside>
+      <%= image_tag('user_profile_img.png', :class => 'profile-picture') %>
+      <%= @user.name %><br>
+      Current City: <%= @user.city %><br>
+      Joined: <%= @user.created_at.getlocal %>
+    </aside>
   </div>
-  <div>
-    <%= @user.name %><br>
-    Current City: <%= @user.city %><br>
-    Joined: <%= @user.created_at.getlocal %>
+  <div class="container col-md-8">
     <% if !@user.posts.empty?%>
       <h4> Posts: </h4>
       <% @user.posts.each do |ele|  %>
