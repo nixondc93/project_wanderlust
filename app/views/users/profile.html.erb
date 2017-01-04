@@ -6,7 +6,7 @@
     Welcome, <%= @user.name %>!<br>
     Current City: <%= @user.city %><br>
     Joined: <%= @user.created_at.getlocal %><br>
-    <%= link_to 'Edit Profile', edit_path %>
+    <%= link_to 'Edit Profile', edit_path %> | <%= link_to 'Delete', profile_path, :method => :delete, data: {confirm: 'Are you sure?'} %>
     <% if !@user.posts.empty?%>
       <h4> Posts: </h4>
       <% @user.posts.each do |ele|  %>
