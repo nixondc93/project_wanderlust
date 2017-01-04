@@ -1,0 +1,8 @@
+<%= form_for @post, url:"/posts" do |f| %>
+  <span>Title: </span>
+  <%= f.text_field :title %><br>
+  <span>Content: </span>
+  <%= f.text_field :content %><br>
+  <%= f.hidden_field :user_id, :value => @user_id %>
+  <%= f.submit %>
+<% end %>

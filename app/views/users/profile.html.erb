@@ -6,11 +6,12 @@
     Welcome, <%= @user.name %>!<br>
     Current City: <%= @user.city %><br>
     Joined: <%= @user.created_at.getlocal %><br>
-    <%= link_to 'Edit Profile', edit_path %> | <%= link_to 'Delete', profile_path, :method => :delete, data: {confirm: 'Are you sure?'} %>
+    <%= link_to 'Edit Profile', edit_path %> | <%= link_to 'Delete', profile_path, :method => :delete, data: {confirm: 'Are you sure?'} %><br>
+    <%= link_to 'New Post', newpost_path %>
     <% if !@user.posts.empty?%>
       <h4> Posts: </h4>
       <% @user.posts.each do |ele|  %>
-        <h5><%=ele.title%></h5>
+        <h5><%= link_to ele.title,  post_path(ele.id)%></h5>
         <p><%=ele.content%></p>
         <p><%=ele.city%></p>
       <% end %>
