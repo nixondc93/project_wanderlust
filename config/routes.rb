@@ -18,8 +18,11 @@ Rails.application.routes.draw do
   get '/cities' => 'cities#index'
   get '/cities/:name' => 'cities#show', as: 'city'
 
-  get '/posts/new' => 'posts#new', as: 'newpost'
-  post '/posts' => 'posts#create', as: 'createpost'
+  get '/posts/new' => 'posts#new', as: 'new_post'
+  post '/posts' => 'posts#create', as: 'create_post'
   get '/posts/:title' => 'posts#show', as: 'post'
+  get '/posts/:title/edit' => 'posts#edit', as: 'edit_post'
+  put '/posts/:title/edit' => 'posts#update'
+  delete '/posts/:title' => 'posts#destroy'
 
 end

@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_username(params[:name])
     redirect_to '/profile' if user_id == session[:user_id].to_s
+
   end
 
   def profile
