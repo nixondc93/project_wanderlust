@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-  get '/users/:id' => 'users#show'
+  get '/users/:name' => 'users#show'
   get '/profile' => 'users#profile'
   get '/edit' => 'users#edit'
   put '/profile' => 'users#update'
@@ -20,6 +20,6 @@ Rails.application.routes.draw do
 
   get '/posts/new' => 'posts#new', as: 'newpost'
   post '/posts' => 'posts#create', as: 'createpost'
-  get '/posts/:id' => 'posts#show', as: 'post'
+  get '/posts/:title' => 'posts#show', as: 'post'
 
 end

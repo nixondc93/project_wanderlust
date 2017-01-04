@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(user_id)
+    @user = User.find_by_username(params[:name])
     redirect_to '/profile' if user_id == session[:user_id].to_s
   end
 
@@ -43,10 +43,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def user_id
-    params[:id]
-  end
 
   def user_params
     params.require(:user).permit(:name, :city, :email, :password, :password_confirmation)
