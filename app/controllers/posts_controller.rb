@@ -12,20 +12,41 @@ class PostsController < ApplicationController
 
 
   def create
-    puts post_params
     @post = Post.new(post_params)
     if @post.save
-      redirect_to '/profile'
+      if $current_city
+        redirect_to '/cities/' + $current_city
+      else
+        redirect_to '/profile'
+      end
     else
       redirect_to '/posts/new'
     end
+  end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    updated_post = Post.find(params[:id])
+    if updated_post.update(post_params)
+      redirect_to '/profile'
+    else
+      redirect_to '/edit'
+    end
+  end
+
+  def destroy
+    Post.destroy(session[:user_id])
+    session[:user_id] = nil
+    redirect_to '/'
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :user_id)
+    params.require(:post).permit(:title, :content, :city, :user_id)
   end
 
 

@@ -1,11 +1,14 @@
 class CitiesController < ApplicationController
 
+
   def index
     @cities = City.all
   end
 
   def show
-    @city = City.find_by({name: params[:name]})
+    @city = Post.where({city: params[:name]})
+    $current_city = params[:name]
+    
   end
 
 end
