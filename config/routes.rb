@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/edit' => 'users#edit'
   put '/profile' => 'users#update'
   patch '/profile' => 'users#update'
+  delete '/profile' => 'users#destroy'
 
   get '/cities' => 'cities#index'
   get '/cities/:name' => 'cities#show', as: 'city'

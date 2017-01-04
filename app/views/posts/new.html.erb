@@ -3,6 +3,8 @@
   <%= f.text_field :title %><br>
   <span>Content: </span>
   <%= f.text_field :content %><br>
+  <span>City:</span>
+  <%= f.text_field :city %><br>
   <%= f.hidden_field :user_id, :value => @user_id %>
   <%= f.submit %>
 <% end %>
