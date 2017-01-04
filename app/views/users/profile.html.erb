@@ -1,21 +1,32 @@
-<h1>Current User</h1>
-  <div>
-    <%= image_tag('user_profile_img.png', :class => 'profile-picture') %>
+<div class="container">
+  <div class="row">
+    <div class="user-container col-md-3">
+      <div>
+        <%= image_tag('user_profile_img.png', :class => 'profile-picture') %>
+      </div>
+      <div>
+        <p>Welcome, <%= @user.name %>!<br>
+        Current City: <%= @user.city %><br>
+        Joined: <%= @user.created_at.getlocal.to_date %><br>
+        <h2><%= button_to("Edit Profile", edit_path, :method => :get, class: "btn btn-info" ) %></h2>
+        <h2><%= button_to("Delete Profile", profile_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %></h2>
+        </p>
+      </div>
+    </div>
+    <div class="posts-container col-md-8">
+      <%= button_to("New Post", newpost_path, :method => :get, class: "post-button btn btn-success") %>
+        <% if !@user.posts.empty? %>
+        <p> Posts: </p>
+        <% @user.posts.each do |ele| %>
+          <div class="row">
+            <p><%= link_to ele.title,  post_path(ele.id) %><br>
+            <%= ele.content %>
+            <%= ele.city %></p>
+          </div>
+        <% end %>
+        <% else %>
+          <h4>No Posts Yet</h4>
+        <% end %>
+    </div>
   </div>
-  <div>
-    Welcome, <%= @user.name %>!<br>
-    Current City: <%= @user.city %><br>
-    Joined: <%= @user.created_at.getlocal %><br>
-    <%= link_to 'Edit Profile', edit_path %> | <%= link_to 'Delete', profile_path, :method => :delete, data: {confirm: 'Are you sure?'} %><br>
-    <%= link_to 'New Post', newpost_path %>
-    <% if !@user.posts.empty?%>
-      <h4> Posts: </h4>
-      <% @user.posts.each do |ele|  %>
-        <h5><%= link_to ele.title,  post_path(ele.id)%></h5>
-        <p><%=ele.content%></p>
-        <p><%=ele.city%></p>
-      <% end %>
-    <%else%>
-      <h4>No Posts Yet</h4>
-    <%end%>
-  </div>
+</div>

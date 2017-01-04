@@ -1,4 +1,6 @@
-<h1>Edit User</h1>
+<p>Edit User</p>
+<%= image_tag('user_profile_img.png', :class => 'profile-picture') %>
+<h2><%= button_to("Edit Profile Picture", edit_path, :method => :get, class: "btn btn-info" ) %></h2><br>
   <%= form_for :user, url: '/profile', :method => :put do |f| %>
     Name: <%= f.text_field :name %><br>
     Current City: <%= f.text_field :city %><br>
