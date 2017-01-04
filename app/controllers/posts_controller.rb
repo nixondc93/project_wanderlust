@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_title(params[:title])
+    p @post
     # redirect_to '/posts/:id' if post.user_id == session[:user_id].to_s
   end
 
@@ -25,11 +26,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_title(params[:title])
   end
 
   def update
-    updated_post = Post.find(params[:id])
+    updated_post = Post.find_by_title(params[:title])
     if updated_post.update(post_params)
       if $current_city
         redirect_to '/cities/' + $current_city
@@ -42,10 +43,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.destroy(params[:id])
-    params[:id] = nil
+    deleted_post = Post.find_by_title(params[:title])
+    Post.destroy(deleted_post)
     if $current_city
-      redirect_to '/cities/' + @current_city
+      redirect_to '/cities/' + $current_city
     else
       redirect_to '/profile'
     end
