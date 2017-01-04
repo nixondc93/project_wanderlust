@@ -12,6 +12,7 @@
       <% @user.posts.each do |ele|  %>
         <h5><%=ele.title%></h5>
         <p><%=ele.content%></p>
+        <p><%=ele.city%></p>
       <% end %>
     <%else%>
       <h4>No Posts Yet</h4>
