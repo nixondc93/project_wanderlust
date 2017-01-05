@@ -1,17 +1,15 @@
-<div class="container">
-  <div class="content-container .col-md-6 .col-md-offset-3">
-    <p>New Post</p>
-    <%= form_for @post, url:"/posts" do |f| %>
+<div class="content-container .col-md-6 .col-md-offset-3">
+  <p>New Post</p>
+  <%= form_for @post, url:"/posts" do |f| %>
 
-    <% if $current_city %>
-      <%= f.hidden_field :city, :value => $current_city %>
-    <%else%>
-      <p> City: <%= f.text_field :city %></p>
-    <%end%>
-    <p> Title: <%= f.text_field :title %></p>
-    <p> Post: <%= f.text_field :content %></p>
-    <%= f.hidden_field :user_id, :value => @user_id %>
-    <%= button_to("Create Post", create_post_path, :method => :post, class: "new-post-button btn btn-info" ) %>
-    <% end %>
-  </div>
+  <% if $current_city %>
+    <%= f.hidden_field :city, :value => $current_city %>
+  <%else%>
+    <p> City: <%= f.text_field :city %></p>
+  <%end%>
+  <p> Title: <%= f.text_field :title %></p>
+  <p> <span class="content">Post:</span> <%= f.text_area :content %></p>
+  <%= f.hidden_field :user_id, :value => @user_id %>
+  <%= button_to("Create Post", create_post_path, :method => :post, class: "new-post-button btn btn-info" ) %>
+  <% end %>
 </div>

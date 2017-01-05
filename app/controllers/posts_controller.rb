@@ -19,6 +19,7 @@ class PostsController < ApplicationController
         redirect_to '/profile'
       end
     else
+      flash[:error] = @post.errors.full_messages.join(', ')
       redirect_to '/posts/new'
     end
   end
