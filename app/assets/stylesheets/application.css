@@ -93,3 +93,17 @@ width: 200px;
 .city-btn {
   margin-bottom: 5px;
 }
+
+.post-pic {
+  height: 100px;
+  width: 100px;
+}
+
+.post {
+  display: inline-block;
+  text-align: left;
+}
+
+.city-post {
+  text-align: left;
+}

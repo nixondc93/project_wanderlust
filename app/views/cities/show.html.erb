@@ -1,10 +1,12 @@
 <h1><%= params[:name] %></h1>
 <%= image_tag(params[:name]+'.jpg', :class => 'iconic-picture') %>
 <%= link_to 'New Post', new_post_path %><br>
+<div class="city-post col-md-8 col-md-offset-3">
 <% @city.each do |city| %>
-  <div>
-    <%= image_tag(User.find(city.user_id).avatar.url, class: 'profile-picture') %>
-    <p><%= link_to city.title,  post_path(city.title)%><br>
+  <div class="post">
+    <%= image_tag(User.find(city.user_id).avatar.url, class: 'post-pic') %>
+    <p class="post"><%= link_to city.title,  post_path(city.title)%><br>
     <%= city.content %></p>
-  </div>
+  </div><br>
 <% end %>
+</div>
