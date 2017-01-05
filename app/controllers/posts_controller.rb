@@ -36,7 +36,7 @@ class PostsController < ApplicationController
         redirect_to '/profile'
       end
     else
-      redirect_to editpost_path
+      redirect_to edit_post_path
     end
   end
 
