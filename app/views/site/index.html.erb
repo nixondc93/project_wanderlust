@@ -1,1 +1,7 @@
 <h1>Project Wanderlust</h1>
+
+<% @cities.each do |city| %>
+  <%= link_to(city, city_path(city), class: 'btn btn-info') %>
+<% end %>
+
+<%= image_tag('Wanderlust.jpg', :class => 'iconic-picture') %>
