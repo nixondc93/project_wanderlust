@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :check_user, only: [:edit]
+
   def show
     @post = Post.find_by_title(params[:title])
   end
