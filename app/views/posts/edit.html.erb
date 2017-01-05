@@ -1,13 +1,11 @@
 
-<div class="container">
-  <div class="content-container .col-md-6 .col-md-offset-3">
-    <p>Edit Post</p>
-      <%= form_for :post, :method => :put do |f| %>
-        <p> Title: <%= f.text_field :title, :value => @post.title %></p>
-        <p>City: <%= f.text_field :city, :value => @post.city%></p>
-        <p><span class="content">Content:</span> <%= f.text_area :content, :value => @post.content %></p>
-        <%= f.hidden_field :user_id, :value => @post.user_id %>
-        <%= button_to("Save Post", profile_path, :method => :put, class: "btn btn-primary" ) %><br>
-      <% end %>
-  </div>
+<div class="content-container .col-md-6 .col-md-offset-3">
+  <p>Edit Post</p>
+    <%= form_for :post, :method => :put do |f| %>
+      <p> Title: <%= f.text_field :title, :value => @post.title %></p>
+      <p>City: <%= f.text_field :city, :value => @post.city%></p>
+      <p><span class="content">Content:</span> <%= f.text_area :content, :value => @post.content %></p>
+      <%= f.hidden_field :user_id, :value => @post.user_id %>
+      <%= f.submit "Save Post", class: "btn btn-primary" %>
+    <% end %>
 </div>

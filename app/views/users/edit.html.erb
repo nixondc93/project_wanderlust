@@ -1,17 +1,14 @@
-<div class="container">
-  <div class="content-container .col-md-6 .col-md-offset-3">
-    <p>Edit User</p>
-      <% if @user.avatar.url %>
+<div class="content-container .col-md-6 .col-md-offset-3">
+  <p>Edit User</p>
+    <% if @user.avatar.url %>
       <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
-      <% else %>
+    <% else %>
       <%= image_tag('missing.png', :class => 'profile-picture') %>
-      <% end %>
-        <%= form_for :user, url: '/profile', :method => :put do |f| %>
-          <p>Name: <%= f.text_field :name %></p>
-          <p>Current City: <%= f.text_field :city %></p><br>
-          Profile Image: <%= f.label :avatar %><br>
-                         <%= f.file_field :avatar %>
-          <%= button_to("Save Changes", profile_path, :method => :put, class: "btn btn-primary" ) %><br>
-        <% end %>
-  </div>
+    <% end %>
+    <%= form_for :user, url: '/profile', :method => :put do |f| %>
+      <p>Name: <%= f.text_field :name %></p>
+      <p>Current City: <%= f.text_field :city %></p>
+      <p>Profile Image: <%= f.file_field :avatar %></p>
+      <%= f.submit "Save Changes", class: "btn btn-primary" %>
+    <% end %>
 </div>
