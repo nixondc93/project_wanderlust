@@ -31,10 +31,13 @@ width: 200px;
 }
 
 .posts-container {
-  font-size: 50px;
   text-align: center;
   border: 1px solid white;
   border-radius: 5px
+}
+
+.post-row {
+  clear: both;
 }
 
 .new-post {
@@ -69,6 +72,7 @@ width: 200px;
   margin: 7px 2px;
 }
 
-.btn {
-  display: inline-block;
+
+.content {
+  vertical-align: top;
 }

@@ -1,11 +1,8 @@
 <div class="container">
   <div class="content-container .col-md-6 .col-md-offset-3">
-    <p>Posts</p>
-    <p>City: <%= @post.city %></p>
-    <p>Title: <%= @post.title %></p>
-    <p>Content: <%= @post.content %></p>
-    <%=button_to "Update Post", "/posts/#{@post.title}/edit", {method: :get}%>
-    <h2><%= button_to("Update Post", edit_path, :method => :get, class: "btn btn-info" ) %></h2>
-    <h2><%= button_to("Delete Post", post_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %></h2>
+    <h4> Posts: </h4>
+      <h5><%= @post.title %></h5>
+      <p><%= @post.city %></p>
+      <p><%= @post.content %></p>
   </div>
 </div>

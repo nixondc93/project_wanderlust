@@ -18,11 +18,15 @@
         <% if !@user.posts.empty? %>
         <p> Posts: </p>
         <% @user.posts.each do |ele| %>
-          <div class="row">
+          <div class="post-row">
             <p><%= link_to ele.title,  post_path(ele.title) %><br>
-            <%= ele.content %>
-            <%= ele.city %></p>
+            <%= ele.content %><br>
+            <%= link_to ele.city, city_path(ele.city) %></p>
           </div>
+          <p class="pull-right">
+            <%= link_to "Edit", edit_post_path(ele.title) %> 
+            <%= link_to "Delete", post_path(ele.title), :method => :delete, data: {confirm: "Are you sure you want to delete #{ele.title}?"} %>
+          </p>
         <% end %>
         <% else %>
           <h4>No Posts Yet</h4>

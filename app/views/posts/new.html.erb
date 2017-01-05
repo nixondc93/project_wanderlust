@@ -2,6 +2,7 @@
   <div class="content-container .col-md-6 .col-md-offset-3">
     <p>New Post</p>
     <%= form_for @post, url:"/posts" do |f| %>
+
     <% if $current_city %>
       <%= f.hidden_field :city, :value => $current_city %>
     <%else%>
