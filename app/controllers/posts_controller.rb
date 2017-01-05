@@ -2,8 +2,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_title(params[:title])
-    p @post
-    # redirect_to '/posts/:id' if post.user_id == session[:user_id].to_s
   end
 
   def new

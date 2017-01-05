@@ -15,12 +15,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by({name: params[:name]})
+    $current_city = nil
+    @user = User.find_by_name(params[:name])
     redirect_to '/profile' if @user == User.find(session[:user_id])
-
   end
 
   def profile
+    $current_city = nil
     @user = User.find(session[:user_id])
   end
 
