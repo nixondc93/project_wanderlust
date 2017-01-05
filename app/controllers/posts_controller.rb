@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     deleted_post = Post.find_by_title(params[:title])
-    Post.destroy(deleted_post)
+    Post.delete(deleted_post)
     if $current_city
       redirect_to '/cities/' + $current_city
     else
