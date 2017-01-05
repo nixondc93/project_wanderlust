@@ -4,8 +4,8 @@
     <%= form_for @post, url:"/posts" do |f| %>
       <span>Title: </span>
       <%= f.text_field :title %><br>
-      <span>Content: </span>
-      <%= f.text_field :content %><br>
+      <span class="content">Content: </span>
+      <%= f.text_area :content %><br>
       <% if $current_city %>
         <%= f.hidden_field :city, :value => $current_city %>
       <%else%>

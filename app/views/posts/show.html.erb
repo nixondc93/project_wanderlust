@@ -2,5 +2,3 @@
   <h5><%= @post.title %></h5>
   <p><%= @post.city %></p>
   <p><%= @post.content %></p>
-<%=button_to "Update Post", "/posts/#{@post.title}/edit", {method: :get} %> <br>
-<%= button_to 'Delete', post_path, :method => :delete, data: {confirm: 'Are you sure?'} %>
