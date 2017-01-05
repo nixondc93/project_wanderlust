@@ -12,9 +12,9 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <%= link_to('Wanderlust', '/', class: 'navbar-brand') %>
       <% if current_user %>
-        <%= link_to("Logout", '/logout', :method => :get, class: 'btn btn-success navbar-right nav-btn') %> | <%= link_to('Signed in as ' +current_user.name, '/profile', :method => :get, class: 'btn btn-success navbar-right nav-btn') %>
+        <%= link_to("Logout", '/logout', :method => :get, class: 'btn btn-success navbar-right nav-btn') %> <%= link_to('Signed in as ' +current_user.name, '/profile', :method => :get, class: 'btn btn-success navbar-right nav-btn') %>
       <% else %>
-        <%= button_to('Signup', '/signup', :method => :get, class: 'btn btn-success navbar-right nav-btn') %> | <%= button_to('Login', '/login', :method => :get, class: 'btn btn-success navbar-right nav-btn') %>
+        <%= button_to('Signup', '/signup', :method => :get, class: 'btn btn-success navbar-right nav-btn') %> <%= button_to('Login', '/login', :method => :get, class: 'btn btn-success navbar-right nav-btn') %>
       <% end %>
     </nav>
 
