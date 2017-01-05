@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/posts/:title' => 'posts#show', as: 'post'
   get '/posts/:title/edit' => 'posts#edit', as: 'edit_post'
   put '/posts/:title/edit' => 'posts#update'
+  patch '/posts/:title/edit' => 'posts#update'
   delete '/posts/:title' => 'posts#destroy'
 
 end

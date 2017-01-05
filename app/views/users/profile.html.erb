@@ -8,8 +8,8 @@
         <p>Welcome, <%= @user.name %>!<br>
         Current City: <%= @user.city %><br>
         Joined: <%= @user.created_at.getlocal.to_date %><br>
-        <h2><%= button_to("Edit Profile", edit_path, :method => :get, class: "btn btn-info" ) %></h2>
-        <h2><%= button_to("Delete Profile", profile_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %></h2>
+        <%= link_to("Edit", edit_path, :method => :get, class: "btn btn-info" ) %> 
+        <%= link_to("Delete", profile_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %>
         </p>
       </div>
     </div>
@@ -24,8 +24,8 @@
             <%= link_to ele.city, city_path(ele.city) %></p>
           </div>
           <p class="pull-right">
-            <%= link_to "Edit", edit_post_path(ele.title) %> 
-            <%= link_to "Delete", post_path(ele.title), :method => :delete, data: {confirm: "Are you sure you want to delete #{ele.title}?"} %>
+            <%= link_to("Edit", edit_post_path(ele.title), class: 'btn btn-info') %> 
+            <%= link_to("Delete", post_path(ele.title), :method => :delete, data: {confirm: "Are you sure you want to delete #{ele.title}?"}, class: 'btn btn-danger') %>
           </p>
         <% end %>
         <% else %>

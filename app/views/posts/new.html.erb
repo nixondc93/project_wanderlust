@@ -9,7 +9,7 @@
       <p> City: <%= f.text_field :city %></p>
     <%end%>
     <p> Title: <%= f.text_field :title %></p>
-    <p> Post: <%= f.text_field :content %></p>
+    <p> <span class="content">Post:</span> <%= f.text_area :content %></p>
     <%= f.hidden_field :user_id, :value => @user_id %>
     <%= button_to("Create Post", create_post_path, :method => :post, class: "new-post-button btn btn-info" ) %>
     <% end %>
