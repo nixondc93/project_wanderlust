@@ -12,10 +12,8 @@
   <div class="posts-container col-md-8">
     <% if !@user.posts.empty? %>
       <h4> Posts: </h4>
-      <% @user.posts.each do |ele|  %>
-        <p><%= link_to ele.title, post_path(ele.title) %><br>
-        <%= ele.content %><br>
-        <%= link_to ele.city, city_path(ele.city) %></p>
+      <% @cities.each do |city|  %>
+        <p><%= @user.posts.where({city: "#{city}"}).count %> in <%= link_to city, city_path(city) %></p>
       <% end %>
     <% else %>
       <h4>No Posts Yet</h4>
