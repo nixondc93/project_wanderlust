@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     deleted_post = Post.find_by_title(params[:title])
     Post.delete(deleted_post)
     if $current_city
