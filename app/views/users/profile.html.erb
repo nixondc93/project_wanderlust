@@ -1,13 +1,13 @@
 <div class="row">
   <div class="user-container col-md-3">
     <div>
-      <%= image_tag('user_profile_img.png', :class => 'profile-picture') %>
+      <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
     </div>
     <div>
       <p>Welcome, <%= @user.name %>!<br>
       Current City: <%= @user.city %><br>
       Joined: <%= @user.created_at.getlocal.to_date %><br>
-      <%= link_to("Edit", edit_path, :method => :get, class: "btn btn-info" ) %> 
+      <%= link_to("Edit", edit_path, class: "btn btn-info" ) %> 
       <%= link_to("Delete", profile_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %>
       </p>
     </div>
