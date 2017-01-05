@@ -1,8 +1,12 @@
-<h1>Edit Post</h1>
-  <%= form_for :post, :method => :put do |f| %>
-    Title: <%= f.text_field :title, :value => @post.title %><br>
-    City: <%= f.text_field :city, :value => @post.city%><br>
-    Content: <%= f.text_field :content, :value => @post.content %><br>
-    <%= f.hidden_field :user_id, :value => @post.user_id %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class="content-container .col-md-6 .col-md-offset-3">
+    <p>Edit Post</p>
+      <%= form_for :post, :method => :put do |f| %>
+        <p> Title: <%= f.text_field :title, :value => @post.title %></p>
+        <p>City: <%= f.text_field :city, :value => @post.city%></p>
+        <p>Content: <%= f.text_field :content, :value => @post.content %></p>
+        <%= f.hidden_field :user_id, :value => @post.user_id %>
+        <%= button_to("Save Post", profile_path, :method => :put, class: "btn btn-primary" ) %><br>
+      <% end %>
+  </div>
+</div>
