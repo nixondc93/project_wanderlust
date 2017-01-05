@@ -1,7 +1,8 @@
 <h1>Project Wanderlust</h1>
 
+<select onChange="if(this.selectedIndex!=0) self.location=this.options[this.selectedIndex].value">
 <% @cities.each do |city| %>
-  <%= link_to(city, city_path(city), class: 'city-btn btn btn-info') %>
+  <option value= "/cities/<%= city %>"  ><%=city%></option>
 <% end %>
-
+</select>
 <%= image_tag('Wanderlust.jpg', :class => 'iconic-picture') %>
