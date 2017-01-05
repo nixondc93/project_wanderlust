@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="content-container .col-md-6 .col-md-offset-3">
   <p>Edit User</p>
     <% if @user.avatar.url %>
@@ -8,9 +7,8 @@
     <% end %>
     <%= form_for :user, url: '/profile', :method => :put do |f| %>
       <p>Name: <%= f.text_field :name %></p>
-      <p>Current City: <%= f.text_field :city %></p><br>
-      <p>Profile Image: <%= f.label :avatar %><br>
-                        <%= f.file_field :avatar %></p>
-      <%= link_to("Save Changes", profile_path, :method => :put, class: "btn btn-primary" ) %> <%= link_to("Cancel", profile_path, class: "btn btn-default") %>
+      <p>Current City: <%= f.text_field :city %></p>
+      <p>Profile Image: <%= f.file_field :avatar %></p>
+      <%= f.submit "Save Changes", class: "btn btn-primary" %>
     <% end %>
 </div>
