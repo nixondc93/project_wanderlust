@@ -4,6 +4,8 @@
 
   Name: <%= f.text_field :name %><br>
   Current City: <%= f.text_field :city %><br>
+  Profile Image: <%= f.label :avatar %><br>
+                 <%= f.file_field :avatar %>
   Email: <%= f.text_field :email %><br>
   Password: <%= f.password_field :password %><br>
   Password Confirmation: <%= f.password_field :password_confirmation %><br>
