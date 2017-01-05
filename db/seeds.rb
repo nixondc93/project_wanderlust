@@ -23,3 +23,4 @@
     Post.create(title: 'Cops', content: 'I got arrested here!', user_id: '6', city: 'Houston')
     Post.create(title: 'Shopping', content: 'Great deals here!', user_id: '7', city: 'Tokyo')
     Post.create(title: 'Seeds', content: 'Seeding is fun!', user_id: '8', city: 'San Francisco')
+    Post.create(title: 'Beeeeeerrrr', content: 'BBBBEEEEEEEEEEEERRRRRR', user_id: '4', city: 'Boone')
