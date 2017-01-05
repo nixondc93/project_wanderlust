@@ -1,36 +1,34 @@
-<div class="container">
-  <div class="row">
-    <div class="user-container col-md-3">
-      <div>
-        <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
-      </div>
-      <div>
-        <p>Welcome, <%= @user.name %>!<br>
-        Current City: <%= @user.city %><br>
-        Joined: <%= @user.created_at.getlocal.to_date %><br>
-        <%= link_to("Edit", edit_path, :method => :get, class: "btn btn-info" ) %>
-        <%= link_to("Delete", profile_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %>
+<div class="row">
+  <div class="user-container col-md-3">
+    <div>
+      <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
+    </div>
+    <div>
+      <p>Welcome, <%= @user.name %>!<br>
+      Current City: <%= @user.city %><br>
+      Joined: <%= @user.created_at.getlocal.to_date %><br>
+      <%= link_to("Edit", edit_path, class: "btn btn-info" ) %> 
+      <%= link_to("Delete", profile_path, :method => :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger") %>
+      </p>
+    </div>
+  </div>
+  <div class="posts-container col-md-8">
+    <%= button_to("New Post", new_post_path, :method => :get, class: "post-button btn btn-success") %>
+      <% if !@user.posts.empty? %>
+      <p> Posts: </p>
+      <% @user.posts.each do |ele| %>
+        <div class="post-row">
+          <p><%= link_to ele.title,  post_path(ele.title) %><br>
+          <%= ele.content %><br>
+          <%= link_to ele.city, city_path(ele.city) %></p>
+        </div>
+        <p class="pull-right">
+          <%= link_to("Edit", edit_post_path(ele.title), class: 'btn btn-info') %> 
+          <%= link_to("Delete", post_path(ele.title), :method => :delete, data: {confirm: "Are you sure you want to delete #{ele.title}?"}, class: 'btn btn-danger') %>
         </p>
-      </div>
-    </div>
-    <div class="posts-container col-md-8">
-      <%= button_to("New Post", new_post_path, :method => :get, class: "post-button btn btn-success") %>
-        <% if !@user.posts.empty? %>
-        <p> Posts: </p>
-        <% @user.posts.each do |ele| %>
-          <div class="post-row">
-            <p><%= link_to ele.title,  post_path(ele.title) %><br>
-            <%= ele.content %><br>
-            <%= link_to ele.city, city_path(ele.city) %></p>
-          </div>
-          <p class="pull-right">
-            <%= link_to("Edit", edit_post_path(ele.title), class: 'btn btn-info') %> 
-            <%= link_to("Delete", post_path(ele.title), :method => :delete, data: {confirm: "Are you sure you want to delete #{ele.title}?"}, class: 'btn btn-danger') %>
-          </p>
-        <% end %>
-        <% else %>
-          <h4>No Posts Yet</h4>
-        <% end %>
-    </div>
+      <% end %>
+      <% else %>
+        <h4>No Posts Yet</h4>
+      <% end %>
   </div>
 </div>

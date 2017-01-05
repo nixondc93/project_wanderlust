@@ -1,26 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="user-container col-md-3">
-      <div>
-        <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
-      </div>
-      <div>
-        <p><%= @user.name %><br>
-        Current City: <%= @user.city %><br>
-        Joined: <%= @user.created_at.getlocal %></p>
-      </div>
+<div class="row">
+  <div class="user-container col-md-3">
+    <div>
+      <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
     </div>
-    <div class="posts-container col-md-8">
-      <% if !@user.posts.empty? %>
-        <h4> Posts: </h4>
-        <% @user.posts.each do |ele|  %>
-          <p><%= link_to ele.title, post_path(ele.title) %><br>
-          <%= ele.content %><br>
-          <%= link_to ele.city, city_path(ele.city) %></p>
-        <% end %>
-      <% else %>
-        <h4>No Posts Yet</h4>
+    <div>
+      <p><%= @user.name %><br>
+      Current City: <%= @user.city %><br>
+      Joined: <%= @user.created_at.getlocal.to_date %></p>
+    </div>
+  </div>
+  <div class="posts-container col-md-8">
+    <% if !@user.posts.empty? %>
+      <h4> Posts: </h4>
+      <% @user.posts.each do |ele|  %>
+        <p><%= link_to ele.title, post_path(ele.title) %><br>
+        <%= ele.content %><br>
+        <%= link_to ele.city, city_path(ele.city) %></p>
       <% end %>
-    </div>
+    <% else %>
+      <h4>No Posts Yet</h4>
+    <% end %>
   </div>
 </div>
