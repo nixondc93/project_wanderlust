@@ -19,7 +19,13 @@
     </nav>
 
     <div class="jumbotron clearfix">
+      <div class="container">
+      <% flash.each do |name, msg| %>
+        <div class="error-message">! <%= msg %> !</div>
+      <% end %>
+
       <%= yield %>
+      </div>
     </div>
 
   </body>
