@@ -1,6 +1,12 @@
-<h1>Edit User</h1>
-  <%= form_for :user, url: '/profile', :method => :put do |f| %>
-    Name: <%= f.text_field :name %><br>
-    Current City: <%= f.text_field :city %><br>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class="edit-user-container .col-md-6 .col-md-offset-3">
+    <p>Edit User</p>
+      <%= image_tag('user_profile_img.png', :class => 'profile-picture') %>
+      <%= button_to("Edit Profile Picture", edit_path, :method => :get, class: "btn btn-info" ) %><br>
+        <%= form_for :user, url: '/profile', :method => :put do |f| %>
+          <p>Name: <%= f.text_field :name %><br>
+          Current City: <%= f.text_field :city %></p><br>
+          <%= button_to("Save Changes", profile_path, :method => :put, class: "btn btn-primary" ) %><br>
+        <% end %>
+  </div>
+</div>
