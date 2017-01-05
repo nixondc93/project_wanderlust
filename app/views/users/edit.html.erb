@@ -1,7 +1,11 @@
 <div class="container">
   <div class="content-container .col-md-6 .col-md-offset-3">
     <p>Edit User</p>
+      <% if @user.avatar.url %>
       <%= image_tag(@user.avatar.url, :class => 'profile-picture') %>
+      <% else %>
+      <%= image_tag('missing.png', :class => 'profile-picture') %>
+      <% end %>
         <%= form_for :user, url: '/profile', :method => :put do |f| %>
           <p>Name: <%= f.text_field :name %></p>
           <p>Current City: <%= f.text_field :city %></p><br>

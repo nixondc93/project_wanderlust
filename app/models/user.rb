@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_secure_password
     has_attached_file :avatar,
                       path: ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
+                      default_url: '/assets/missing.png',
                       url: '/system/:attachment/:id/:basename_:style.:extension',
                       styles: {
                           thumb: ['100x100#', :jpg, quality: 70],
@@ -18,7 +19,7 @@ class User < ApplicationRecord
 
     has_many :posts
     validates_attachment :avatar,
-                         presence: true,
+
                          size: { in: 0..10.megabytes },
                          content_type: { content_type: /^image\/(jpeg|png|gif|tiff)$/ }
 end
