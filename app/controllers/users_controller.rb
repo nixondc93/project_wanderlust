@@ -38,8 +38,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    User.destroy(session[:user_id])
+  def delete
+    User.delete(session[:user_id])
     session[:user_id] = nil
     redirect_to '/'
   end
