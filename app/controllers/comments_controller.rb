@@ -8,14 +8,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @post = Post.find(@comment.post_id)
     if @comment.save
-      if $current_city
-        redirect_to '/cities/' + $current_city
-      else
-        redirect_to '/profile'
-      end
+      redirect_to '/posts/' + @post.title
     else
-
       redirect_to '/'
     end
   end

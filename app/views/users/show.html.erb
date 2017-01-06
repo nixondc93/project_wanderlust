@@ -18,5 +18,10 @@
     <% else %>
       <h4>No Posts Yet</h4>
     <% end %>
+    <% if !@user.comments.empty? %>
+      <h4> Comments: </h4> <p><%= @comments %></p>
+    <% else %>
+      <h4>No Comments Yet</h4>
+    <% end %>
   </div>
 </div>

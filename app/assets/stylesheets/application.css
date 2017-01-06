@@ -97,6 +97,7 @@ width: 200px;
 .post-pic {
   height: 100px;
   width: 100px;
+  float: left;
 }
 
 .post {

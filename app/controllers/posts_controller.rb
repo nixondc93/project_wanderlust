@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_title(params[:title])
+    @comment = Comment.new()
   end
 
   def new

@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   patch '/posts/:title/edit' => 'posts#update'
   delete '/posts/:title' => 'posts#delete'
 
-  resource :comments
+  post '/comments' => 'comments#create'
 end
