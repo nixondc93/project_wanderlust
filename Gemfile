@@ -36,6 +36,10 @@ gem 'paperclip', '~>5.0.0'
 
 gem 'image_magick', '~>0.1.9'
 
+gem 'gmaps4rails'
+
+gem 'geocodio'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
