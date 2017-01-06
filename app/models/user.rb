@@ -1,9 +1,10 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :posts, dependent: :destroy
+  has_many :posts
+  has_many :comments
   validates :email, uniqueness: true, presence: true
   validates :name, presence: true
-    
+
   has_attached_file :avatar,
                     path: ':rails_root/public/system/:attachment/:id/:basename_:style.:extension',
                     default_url: '/assets/missing.png',

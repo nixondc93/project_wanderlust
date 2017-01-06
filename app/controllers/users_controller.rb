@@ -40,7 +40,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    User.find(session[:user_id]).posts.each do |post|
+      post.user_id = nil
+    end
     User.destroy(session[:user_id])
+
     session[:user_id] = nil
     redirect_to '/'
   end
