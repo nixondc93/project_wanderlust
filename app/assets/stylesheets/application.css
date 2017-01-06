@@ -73,6 +73,10 @@ width: 200px;
   margin: 7px 2px;
 }
 
+.nav-btns {
+  margin: 0 5px;
+}
+
 .content {
   vertical-align: top;
 }
@@ -88,4 +92,19 @@ width: 200px;
 
 .city-btn {
   margin-bottom: 5px;
+}
+
+.post-pic {
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+
+.post {
+  display: inline-block;
+  text-align: left;
+}
+
+.city-post {
+  text-align: left;
 }

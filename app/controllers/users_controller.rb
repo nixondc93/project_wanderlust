@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   def show
     $current_city = nil
     @user = User.find_by_name(params[:name])
+    @cities = Post.where({user_id: @user.id}).distinct.pluck(:city)
+    @comments = Comment.where({user_id: @user.id}).count
     redirect_to '/profile' if session[:user_id] != nil && @user == User.find(session[:user_id])
   end
 
@@ -39,8 +41,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
-    User.delete(session[:user_id])
+  def destroy
+    User.destroy(session[:user_id])
     session[:user_id] = nil
     redirect_to '/'
   end

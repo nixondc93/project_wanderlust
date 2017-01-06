@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  def check_user
+    @post = Post.find_by_title(params[:title])
+    if session[:user_id] != @post.user_id
+      redirect_to post_path(@post.title)
+    end
+  end
+
 end

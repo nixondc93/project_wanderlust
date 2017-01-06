@@ -30,5 +30,10 @@
       <% else %>
         <h4>No Posts Yet</h4>
       <% end %>
+    <% if !@user.comments.empty? %>
+      <p class="post-row"> Comments: <%= @user.comments.count %></p>
+    <% else %>
+      <h4>No Comments Yet</h4>
+    <% end %>
   </div>
 </div>
