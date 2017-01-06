@@ -3,4 +3,10 @@
     <h5><%= @post.title %></h5>
     <p><%= @post.city %></p>
     <p><%= @post.content %></p>
+
+    <h5>Comments</h5>
+
+    <%@post.comments.each do |comment|%>
+      <p><span><%= comment.user.name%>:</span><%=comment.content%></p>
+    <%end%>
 </div>

@@ -45,6 +45,7 @@ class UsersController < ApplicationController
       post.update({user_id: nil})
     end
     User.destroy(session[:user_id])
+
     session[:user_id] = nil
     redirect_to '/'
   end
